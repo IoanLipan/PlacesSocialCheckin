@@ -1,8 +1,10 @@
 const axios = require('axios');
 
+require('dotenv').config();
+
 const HttpError = require("../modules/http-error");
 
-const API_KEY = 'AIzaSyBZAZjChObrVVTVR4qp6bhgPU0jDz2msSk';
+const API_KEY = process.env.GOOGLE_MAPS_API_KEY;
 
 async function getCoordsForAddress(address) {
   const response = await axios.get(
